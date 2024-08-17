@@ -1,23 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useResponsiveHover } from "@/hooks/useResponsiveHover";
 import projectData from "@/data/projectData";
+import { getBackgroundPosition } from "@/utils/backgroundPosition";
 
 export default function Projects() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const { isMobile, hoveredIndex, onMouseEnter, onMouseLeave } =
+    useResponsiveHover();
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-around w-[90vw] md:w-[40vw]">
+    <div className="relative gap-3 flex flex-col md:flex-row items-center justify-center w-[90vw] md:w-[50vw]">
       {projectData.map((project, index) => (
         <div
           key={index}
@@ -26,18 +18,15 @@ export default function Projects() {
           } hover:rounded-lg`}
           style={{
             backgroundImage: `url(${project.imageSrc})`,
-            backgroundPosition:
-              hoveredIndex === index
-                ? "center center"
-                : isMobile
-                ? `${project.offsetXMobile} ${project.offsetYMobile}`
-                : `${project.offsetXDesktop} ${project.offsetYDesktop}`,
-            transform: isMobile
-              ? `translateX(${project.marginTop})`
-              : `translateY(${project.marginTop})`,
+            backgroundPosition: getBackgroundPosition(
+              index,
+              hoveredIndex,
+              isMobile,
+              projectData
+            ),
           }}
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseEnter={() => onMouseEnter(index)}
+          onMouseLeave={onMouseLeave}
         >
           <div className="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black bg-opacity-50 text-white p-4 transition-opacity duration-200 opacity-0 group-hover:opacity-100">
             <h2 className="text-xl font-bold">{project.title}</h2>
