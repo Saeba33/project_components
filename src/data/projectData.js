@@ -1,39 +1,60 @@
 const projectData = [
   {
-    imageSrc: "/jjk.jpg",
+    imageSrc: "/1.jpg",
     title: "Project 1",
     description: "A brief description of the first project.",
     link: "https://example.com",
-    marginTop: "50px", // Exemple de marge à appliquer en bas
+    marginTop: "50px",
+    offsetXMobile: "0px",
+    offsetYMobile: "-5px",
+    offsetXDesktop: "-280px",
+    offsetYDesktop: "0px",
   },
   {
-    imageSrc: "/3.png",
+    imageSrc: "/2.jpg",
     title: "Project 2",
     description: "A brief description of the second project.",
     link: "https://example.com",
-    marginTop: "0", // Exemple de marge à appliquer en bas
-  },
-  {
-    imageSrc: "/jjk.jpg",
-    title: "Project 3",
-    description: "A brief description of the third project.",
-    link: "https://example.com",
-    marginTop: "50px", // Exemple de marge à appliquer en bas
+    marginTop: "0",
+    offsetXMobile: "0px",
+    offsetYMobile: "-35px",
+    offsetXDesktop: "-100px",
+    offsetYDesktop: "0px",
   },
   {
     imageSrc: "/3.png",
-    title: "Project 4",
-    description: "A brief description of the fourth project.",
+    title: "Project 1",
+    description: "A brief description of the first project.",
     link: "https://example.com",
-    marginTop: "0", // Exemple de marge à appliquer en bas
+    marginTop: "50px",
+    offsetXMobile: "0px",
+    offsetYMobile: "-10px",
+    offsetXDesktop: "-320px",
+    offsetYDesktop: "0px",
   },
   {
-    imageSrc: "/jjk.jpg",
-    title: "Project 5",
-    description: "A brief description of the fifth project.",
+    imageSrc: "/4.jpg",
+    title: "Project 2",
+    description: "A brief description of the second project.",
     link: "https://example.com",
-    marginTop: "50px", // Exemple de marge à appliquer en bas
+    marginTop: "0",
+    offsetXMobile: "0px",
+    offsetYMobile: "-220px",
+    offsetXDesktop: "-20px",
+    offsetYDesktop: "0px",
   },
+  {
+    imageSrc: "/5.jpg",
+    title: "Project 1",
+    description: "A brief description of the first project.",
+    link: "https://example.com",
+    marginTop: "50px",
+    offsetXMobile: "0px",
+    offsetYMobile: "-3px",
+    offsetXDesktop: "-250px",
+    offsetYDesktop: "0px",
+  },
+
 ];
 
 export default projectData;
